@@ -1,7 +1,6 @@
 FROM  beangoben/pimp_jupyter
 FROM continuumio/miniconda3
 
-
 USER root
 # make bash default shell
 RUN ln -snf /bin/bash /bin/sh
@@ -10,6 +9,7 @@ RUN apt-get update && \
     libatlas-base-dev libpng-dev libfreetype6-dev && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
+RUN useradd -ms /bin/bash jovyan    
 
 USER jovyan
 #python 2
