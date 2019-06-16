@@ -32,7 +32,7 @@ RUN wget http://downloads.sourceforge.net/project/pyquante/PyQuante-1.6/PyQuante
     source activate env &&\
     cd PyQuante-1.6.5 && \
     python setup.py install && \
-    cd \*
+    cd .. && \*
 
 
 
