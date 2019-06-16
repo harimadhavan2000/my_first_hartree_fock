@@ -34,7 +34,9 @@ RUN wget http://downloads.sourceforge.net/project/pyquante/PyQuante-1.6/PyQuante
     python setup.py install && \
     cd .. && \
     
-USER root    
+USER root 
+    source activate env &&\
+    cd PyQuante-1.6.5 && \
     cd .. && \
     rm -rf PyQuante-1.6.5*
 
