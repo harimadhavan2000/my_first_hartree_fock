@@ -9,6 +9,13 @@ RUN apt-get update && \
     libatlas-base-dev libpng-dev libfreetype6-dev && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
+RUN wget http://downloads.sourceforge.net/project/pyquante/PyQuante-1.6/PyQuante-1.6.5/PyQuante-1.6.5.tar.gz &&\
+    tar xzvf PyQuante-1.6.5.tar.gz &&\
+    source activate env &&\
+    cd PyQuante-1.6.5 && \
+    python setup.py install && \
+    cd .. && \
+    rm -rf PyQuante-1.6.5*
 RUN useradd -ms /bin/bash jovyan    
 
 USER jovyan
@@ -27,13 +34,7 @@ RUN conda install -n env -c openbabel openbabel --quiet --yes && \
 #RUN conda install -n openbabel openbabel --quiet --yes && \
     conda clean --all
 RUN pip2 install --no-cache imolecule
-RUN wget http://downloads.sourceforge.net/project/pyquante/PyQuante-1.6/PyQuante-1.6.5/PyQuante-1.6.5.tar.gz &&\
-    tar xzvf PyQuante-1.6.5.tar.gz &&\
-    source activate env &&\
-    cd PyQuante-1.6.5 && \
-    python setup.py install && \
-    cd .. && \
-    rm -rf PyQuante-1.6.5*
+
 
 
 
