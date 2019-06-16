@@ -4,7 +4,8 @@ FROM continuumio/miniconda3
 USER root
 # make bash default shell
 RUN ln -snf /bin/bash /bin/sh
-RUN apt-get update && \
+RUN apt-get install python-pip
+    apt-get update && \
     apt-get install -y gfortran liblapacke-dev liblapack-dev \
     libatlas-base-dev libpng-dev libfreetype6-dev && \
     apt-get clean && \
@@ -18,7 +19,7 @@ USER jovyan
 #    conda clean --all
 
 # packages
-RUN apt-get install python-pip
+
 RUN conda create -n env python=2.7
 RUN conda install -n env -c rdkit rdkit --quiet --yes && \
 #RUN conda install -n rdkit rdkit --quiet --yes && \
