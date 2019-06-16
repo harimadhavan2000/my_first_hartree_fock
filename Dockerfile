@@ -17,9 +17,9 @@ RUN wget http://downloads.sourceforge.net/project/pyquante/PyQuante-1.6/PyQuante
     python setup.py install && \
     cd .. && \
     rm -rf PyQuante-1.6.5*
-RUN useradd -ms /bin/bash jovyan    
+#RUN useradd -ms /bin/bash jovyan    
 
-USER jovyan
+#USER jovyan
 #python 2
 # update packages
 #RUN conda update -n python2 matplotlib scipy numpy seaborn --quiet --yes && \
