@@ -9,6 +9,7 @@ RUN apt-get update && \
     libatlas-base-dev libpng-dev libfreetype6-dev && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
+RUN conda create -n env python=2.7    
 RUN wget http://downloads.sourceforge.net/project/pyquante/PyQuante-1.6/PyQuante-1.6.5/PyQuante-1.6.5.tar.gz &&\
     tar xzvf PyQuante-1.6.5.tar.gz &&\
     source activate env &&\
@@ -26,7 +27,6 @@ USER jovyan
 
 # packages
 
-RUN conda create -n env python=2.7
 RUN conda install -n env -c rdkit rdkit --quiet --yes && \
 #RUN conda install -n rdkit rdkit --quiet --yes && \
     conda clean --all
