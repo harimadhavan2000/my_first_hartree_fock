@@ -12,8 +12,8 @@ RUN apt-get update && \
 USER jovyan
 #python 2
 # update packages
-RUN conda update -n python2 matplotlib scipy numpy seaborn --quiet --yes && \
-    conda clean --all
+#RUN conda update -n python2 matplotlib scipy numpy seaborn --quiet --yes && \
+#    conda clean --all
 
 # packages
 RUN conda install -n python2 -c rdkit rdkit --quiet --yes && \
