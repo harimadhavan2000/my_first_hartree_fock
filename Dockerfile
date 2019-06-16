@@ -17,6 +17,7 @@ USER jovyan
 
 # packages
 RUN conda env list
+RUN ls /opt/conda/envs
 #RUN conda install -n python2.7 -c rdkit rdkit --quiet --yes && \
 RUN conda install -n rdkit rdkit --quiet --yes && \
     conda clean --all
