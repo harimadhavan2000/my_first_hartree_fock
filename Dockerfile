@@ -18,6 +18,7 @@ USER jovyan
 #    conda clean --all
 
 # packages
+RUN apt-get install python-pip
 RUN conda create -n env python=2.7
 RUN conda install -n env -c rdkit rdkit --quiet --yes && \
 #RUN conda install -n rdkit rdkit --quiet --yes && \
