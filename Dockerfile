@@ -31,7 +31,8 @@ RUN wget http://downloads.sourceforge.net/project/pyquante/PyQuante-1.6/PyQuante
     tar xzvf PyQuante-1.6.5.tar.gz &&\
     source activate env &&\
     cd PyQuante-1.6.5 && \
-    python setup.py install && \*
+    python setup.py install && \
+    cd \*
 
 
 
