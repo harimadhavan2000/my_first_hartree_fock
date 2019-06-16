@@ -5,7 +5,7 @@ USER root
 RUN ln -snf /bin/bash /bin/sh
 RUN apt-get update && \
     apt-get install -y gfortran liblapacke-dev liblapack-dev \
-    libatlas-base-dev libpng12-dev libfreetype6-dev && \
+    libatlas-base-dev libpng-dev libfreetype6-dev && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
